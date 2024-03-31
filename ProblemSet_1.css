@@ -1,0 +1,91 @@
+body, html {
+  height: 100%;
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container {
+    flex: 1; /* 让 .container 充满剩余的空间 */
+    display: flex;
+    flex-direction: column; /* 将子元素垂直排列 */
+    justify-content: center;
+    align-items: center;
+  }
+.level {
+  display: grid;
+  font-size: 18px;
+  font-family: Arial, sans-serif; /* 设置字体为Arial或sans-serif字体 */
+  justify-content: center; /* 水平居中 */
+  margin-top:20px;
+  margin-bottom: 20px;
+
+}
+.sudoku {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  border: 2px solid #000;
+  aspect-ratio: 1;
+  max-width: 600px; /* 设置数独框的最大宽度为600px */
+}
+.box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  background-color: #f0f0f0;
+  border: 1px solid #500;
+}
+
+/* 修改了cell的样式，添加了输入框 */
+   .cell1, .cell2 {
+     position: relative;
+     text-align: center;
+     font-size: 28px; /* 设置字号为18像素 */
+     font-family: Arial, sans-serif; /* 设置字体为Arial或sans-serif字体 */
+     justify-content: center; /* 水平居中 */
+     align-items: center; /* 垂直居中 */
+     background-color: lavender; /* 默认背景颜色 */
+   }
+
+   /* 修改了hover时的样式 */
+   .cell1:hover {
+     background-color: lavenderblush /* 鼠标悬停时的背景颜色 */
+   }
+   .form-select {
+     display: block;
+     width: 100%;
+     height: 100%;
+     font-size: 28px;
+     font-weight: 400;
+     line-height: 1;
+     opacity: 0.8;
+   }
+
+   .h1 {
+     margin-top: 50px;
+     margin-bottom: 5px;
+   }
+  
+   .cell2 input {
+     background-color: lightblue;; /* 将cell2中的输入框背景颜色设置为灰色 */
+     opacity: 1; /* 设置cell2中的输入框不透明 */
+     pointer-events: none; /* 设置cell2中的输入框不响应鼠标事件 */
+   }
+
+
+
+   /* 添加输入框的样式 */
+
+   /*.cell-dropdown {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      opacity: 0.8; /* 设置下拉菜单的透明度为0.8，即略带半透明 */
+    }
+   /* 设置cell2中输入框的样式 */
