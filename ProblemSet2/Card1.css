@@ -1,0 +1,110 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container {
+  flex: 1; /* 让 .container 充满剩余的空间 */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width:100%; /* 设置最大宽度 */
+  margin: 0 auto;
+  gap: 60px; /* 卡片之间的间隔 */
+  margin-top: 30px; /* 上方间隔 */
+}
+
+.box {
+  display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+padding: 20px;
+border-radius: 5px;
+box-sizing: border-box;
+border: none;
+}
+.offcanvas-header{
+  background-color:#AFF1FE;
+}
+
+.offcanvas-body{
+  background-color:#e0f2f1;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+.accordion {
+  flex: 1;
+}
+.accordion-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.accordion-item-header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  cursor: pointer;
+}
+.accordion-item-content {
+  padding: 10px;
+  display: none;
+}
+.accordion-item-content.active {
+  display: block;
+}
+.navbar {
+      background-color: skyblue;
+      padding: 10px 20px; /* 上下各10像素，左右各20像素的内边距 */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 70px;
+      z-index: 999;
+  }
+.slogan {
+    font-size: 20px; /* 标语字体大小 */
+    font-weight: bold;
+  }
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-links li {
+    display: inline;
+    margin-right: 20px; /* 导航标签之间的间距 */
+}
+.nav-links li a {
+    text-decoration: none;
+    color: #333; /* 导航标签字体颜色 */
+    font-size: 16px; /* 导航标签字体大小 */
+    transition: color 0.3s ease;
+}
+.nav-links li a:hover {
+    color: #007bff; /* 鼠标悬停时导航标签字体颜色 */
+}
+.footer {
+    background-color: skyblue;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.footer p {
+    margin: 0;
+}

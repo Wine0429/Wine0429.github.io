@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Performance</title>
+    <link href="Card2.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        .card {
+          background-color: lavender;
+          width:320px;
+          margin:20px;
+          text-align: center;
+          border-radius: 5px;
+          padding: 10px;
+          box-sizing: border-box;
+        }
+        .card img {
+          width: 100%;
+          border-radius: 5px;
+          height: auto;
+        }
+        /* 对奇数项的卡片应用不同的背景颜色 */
+        .card:nth-child(odd) {
+          background-color: lavenderblush;
+        }
+        .overlay {
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           text-align: center;
+           background: rgba(0, 0, 0, 0.7);
+           display: none; /* 初始隐藏 */
+           justify-content: center;
+           align-items: center;
+           a {
+             position: absolute;
+             justify-content: center;
+             align-items: center;
+             padding: 10px 23px;
+             line-height: 1;
+             border: 1px solid $white;
+             border-radius: 0px;
+             margin: 4px;
+             color: $white;
+             i {
+               font-size: 30px;
+               color: $white;
+             }
+             &:hover {
+               text-decoration: none;
+             }
+           }
+         }
+        .card:hover .overlay {
+        display: flex; /* 鼠标悬停时显示 */
+      }
+      .overlay-content {
+        text-align: center;
+        color: white;
+      }
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: white;
+        cursor: pointer;
+      }
+      .modal-img {
+        max-width: 80%;
+        max-height: 80%;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width:100%;
+        margin: 0 auto; /* 居中显示 */
+      }
+      .title {
+            background-color: #e0f2f1; /* 淡蓝色背景 */
+            padding: 2px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+            z-index: 999;
+        }
+</style>
+
+  </head>
+  <body>
+
+    <div class="navbar">
+    <div class="slogan">欢迎来我爱的岛屿-刘恋</div>
+    <ul class="nav-links">
+        <li><a href="ProblemSet_2.html">Home</a></li>
+        <li><a href="Card1.html">Music</a></li>
+        <li><a href="Card2.html">Performance</a></li>
+        <li><a href="Card3.html">Advertisement</a></li>
+    </ul>
+    </div>
+    <div class="title">
+      <div class="slogan">枕边迷航 >>> </div>
+    </div>
+    <div class="container">
+    <div class="row">
+      <div class="col-sm-3 card">
+         <img src="厦门.jpg" alt="Your Image">
+         <h3>厦门站</h3>
+         <p>2022.11.08</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2138160705/4833939904796249">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="厦门WORKSHOW星巢沃克秀">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="杭州枕边迷航.jpg" alt="Your Image">
+         <h3>杭州站</h3>
+         <p>2022.12.11</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2138160705/4845943382090211">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="MAO Livehouse">简介</button>
+
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="广州枕边迷航.jpg" alt="Your Image">
+         <h3>广州站</h3>
+         <p>2023.02.03</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2203193403/4866272838292621">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="声音共和Livehouse">简介</button>
+
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="深圳枕边迷航.jpg" alt="Your Image">
+         <h3>深圳站</h3>
+         <p>2023.02.05</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2203193403/4866272838292621">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="HOU LIVE X Mixc cube">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="昆明枕边迷航.jpg" alt="Your Image">
+         <h3>昆明站</h3>
+         <p>2023.02.17</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/1912732610/4870323847037982">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="MODERN SKY LAB">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="福州枕边迷航.jpg" alt="Your Image">
+         <h3>福州站</h3>
+         <p>2023.02.19</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2138160705/4871661725158109">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="MAAQUU X CH8 Livehouse">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="长沙枕边迷航.jpg" alt="Your Image">
+         <h3>长沙站</h3>
+         <p>2023.02.23</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2808150283/4872994993996411">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="VOX LIVEHOUSE">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="武汉枕边迷航.jpg" alt="Your Image">
+         <h3>武汉站</h3>
+         <p>2023.02.25</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/5461398811/4883708006107621">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="武汉有咖现场">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="成都枕边迷航.jpg" alt="Your Image">
+         <h3>成都站</h3>
+         <p>2023.03.10</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2138160705/4878136262529352">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="东区超级音乐现场">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="西安枕边迷航.jpg" alt="Your Image">
+         <h3>西安站</h3>
+         <p>2023.03.12</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/7729639561/4882627674507385">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="西演SPACE·塞斯拾陆">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="郑州枕边迷航.jpg" alt="Your Image">
+         <h3>郑州站</h3>
+         <p>2023.03.16</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/7010534376/4881005896269958">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="7LIVEHOUSE">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="济南枕边迷航.jpg" alt="Your Image">
+         <h3>济南站</h3>
+         <p>2023.03.18</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/7806785367/4881812369965181">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="济南caperland雀跃之地">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="沈阳枕边迷航.jpg" alt="Your Image">
+         <h3>沈阳站</h3>
+         <p>2023.03.25</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2138160705/4884312924622699">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="原料库Live House">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="南京枕边迷航.jpg" alt="Your Image">
+         <h3>南京站</h3>
+         <p>2023.03.31</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/6430112524/4887325160506076">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="Live House" data-bs-content="稻香音乐空间">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="北京枕边迷航.jpg" alt="Your Image">
+         <h3>北京站</h3>
+         <p>2023.04.14</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/1631030844/4903630680885940">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="剧场音乐会" data-bs-content="北京展览馆剧场">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="上海枕边迷航.jpg" alt="Your Image">
+         <h3>上海站</h3>
+         <p>2023.05.20</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/1631030844/4903630680885940">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="剧场音乐会" data-bs-content="上海国家会展中心虹馆">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+    </div>
+    </div>
+    <div class="title">
+      <div class="slogan">日落之前 >>> </div>
+    </div>
+    <div class="container">
+    <div class="row">
+      <div class="col-sm-3 card">
+         <img src="上海.jpg" alt="Your Image">
+         <h3>上海站</h3>
+         <p>2023.12.24</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2138160705/4982942612325781">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="剧场音乐会" data-bs-content="上海保利大剧院">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="温州.jpg" alt="Your Image">
+         <h3>温州站</h3>
+         <p>2024.01.06</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2138160705/4987625503719589">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="剧场音乐会" data-bs-content="温州高新文化广场">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="杭州.jpg" alt="Your Image">
+         <h3>杭州站</h3>
+         <p>2024.01.07</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2138160705/4988371365532464">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="剧场音乐会" data-bs-content="金沙湖大剧院">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="苏州.jpg" alt="Your Image">
+         <h3>苏州站</h3>
+         <p>2024.03.10</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2138160705/5010837154824760">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="剧场音乐会" data-bs-content="苏州湾大剧院">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="景德镇.jpg" alt="Your Image">
+         <h3>景德镇站</h3>
+         <p>2024.03.16</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2138160705/5012995604218039">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="剧场音乐会" data-bs-content="陶溪川大剧院">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="成都.jpg" alt="Your Image">
+         <h3>成都站</h3>
+         <p>2024.03.23</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2138160705/5015873272153510">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="剧场音乐会" data-bs-content="四川大剧院">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+      <div class="col-sm-3 card">
+         <img src="天津.jpg" alt="Your Image">
+         <h3>天津站</h3>
+         <p>2024.04.13</p>
+         <div class="overlay">
+           <div class="overlay-content">
+             <div class="buttons">
+               <a class="fancybox" href="https://weibo.com/2138160705/5023158117859922">
+                 <button type="button" class="btn btn-outline-light btn-sm">图集</button>
+               </a>
+               <button type="button" class="btn btn-outline-light btn-sm" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-title="剧场音乐会" data-bs-content="天津大剧院">简介</button>
+             </div>
+           </div>
+         </div>
+         <div id="myModal" class="modal">
+          <span class="close close-btn">&times;</span>
+          <img class="modal-content" id="modalImg">
+         </div>
+      </div>
+    </div>
+    <div class="footer">
+        <p>© 2024 刘恋-LIAN | Design by LZQ</p>
+    </div>
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal
+    var modalImg = document.getElementById("modalImg");
+
+    // Function to open modal
+    function openModal(imgUrl) {
+      modal.style.display = "block";
+      modalImg.src = imgUrl;
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+</script>
+  </body>
+</html>
